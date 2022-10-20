@@ -100,7 +100,6 @@ class AmazonspiderSpider(scrapy.Spider):
             # .split()[23].split('=')[1]
             self.image_link = str(
                 html.find("div", attrs={"id": 'imgTagWrapperId'}))
-            import re
             self.image_link = re.search("(?P<url>https?://[^\s]+)", self.image_link).group("url").split('"')[0]
         except:
             try:
